@@ -9,6 +9,9 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.*;
 import org.springframework.test.context.ActiveProfiles;
+
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -45,13 +48,16 @@ public abstract class BaseIntegrationTest {
                 ApiResponse.class
         );
 
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertNotNull(response.getBody());
+        assertEquals(HttpStatus.OK, response.getStatusCode(), "登录请求HTTP状态码必须是200 OK");
+        assertNotNull(response.getBody(), "登录响应体不能为null");
+        assertEquals(200, response.getBody().getStatus(), "登录业务状态码必须是200，实际消息：" + response.getBody().getMessage());
 
-        if (response.getBody().getStatus() == 200 && response.getBody().getData() != null) {
+        if (response.getBody().getData() != null) {
             @SuppressWarnings("unchecked")
             Map<String, String> data = (Map<String, String>) response.getBody().getData();
-            return data.get("token");
+            String token = data.get("token");
+            assertNotNull(token, "登录响应中必须包含token");
+            return token;
         }
         return null;
     }
@@ -60,7 +66,7 @@ public abstract class BaseIntegrationTest {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         if (token != null) {
-            headers.set("Authorization", "Bearer " + token);
+            headers.set("token", token);
         }
         return headers;
     }
@@ -68,38 +74,58 @@ public abstract class BaseIntegrationTest {
     protected <T> ResponseEntity<T> get(String url, Class<T> responseType, String token) {
         HttpHeaders headers = createAuthHeaders(token);
         HttpEntity<?> entity = new HttpEntity<>(headers);
-        return restTemplate.exchange(buildUrl(url), HttpMethod.GET, entity, responseType);
+        String fullUrl = buildUrl(url);
+        if (token != null) {
+            fullUrl = fullUrl + (fullUrl.contains("?") ? "&" : "?") + "token=" + URLEncoder.encode(token, StandardCharsets.UTF_8);
+        }
+        return restTemplate.exchange(fullUrl, HttpMethod.GET, entity, responseType);
     }
 
     protected <T> ResponseEntity<T> post(String url, Class<T> responseType, String token) {
         HttpHeaders headers = createAuthHeaders(token);
         HttpEntity<?> entity = new HttpEntity<>(headers);
-        return restTemplate.exchange(buildUrl(url), HttpMethod.POST, entity, responseType);
+        String fullUrl = buildUrl(url);
+        if (token != null) {
+            fullUrl = fullUrl + (fullUrl.contains("?") ? "&" : "?") + "token=" + URLEncoder.encode(token, StandardCharsets.UTF_8);
+        }
+        return restTemplate.exchange(fullUrl, HttpMethod.POST, entity, responseType);
     }
 
     protected <T> ResponseEntity<T> post(String url, Object requestBody, Class<T> responseType, String token) {
         HttpHeaders headers = createAuthHeaders(token);
         HttpEntity<?> entity = new HttpEntity<>(requestBody, headers);
-        return restTemplate.exchange(buildUrl(url), HttpMethod.POST, entity, responseType);
+        String fullUrl = buildUrl(url);
+        if (token != null) {
+            fullUrl = fullUrl + (fullUrl.contains("?") ? "&" : "?") + "token=" + URLEncoder.encode(token, StandardCharsets.UTF_8);
+        }
+        return restTemplate.exchange(fullUrl, HttpMethod.POST, entity, responseType);
     }
 
     protected <T> ResponseEntity<T> put(String url, Object requestBody, Class<T> responseType, String token) {
         HttpHeaders headers = createAuthHeaders(token);
         HttpEntity<?> entity = new HttpEntity<>(requestBody, headers);
-        return restTemplate.exchange(buildUrl(url), HttpMethod.PUT, entity, responseType);
+        String fullUrl = buildUrl(url);
+        if (token != null) {
+            fullUrl = fullUrl + (fullUrl.contains("?") ? "&" : "?") + "token=" + URLEncoder.encode(token, StandardCharsets.UTF_8);
+        }
+        return restTemplate.exchange(fullUrl, HttpMethod.PUT, entity, responseType);
     }
 
     protected <T> ResponseEntity<T> delete(String url, Object requestBody, Class<T> responseType, String token) {
         HttpHeaders headers = createAuthHeaders(token);
         HttpEntity<?> entity = new HttpEntity<>(requestBody, headers);
-        return restTemplate.exchange(buildUrl(url), HttpMethod.DELETE, entity, responseType);
+        String fullUrl = buildUrl(url);
+        if (token != null) {
+            fullUrl = fullUrl + (fullUrl.contains("?") ? "&" : "?") + "token=" + URLEncoder.encode(token, StandardCharsets.UTF_8);
+        }
+        return restTemplate.exchange(fullUrl, HttpMethod.DELETE, entity, responseType);
     }
 
     protected void assertSuccess(ResponseEntity<?> response) {
-        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(HttpStatus.OK, response.getStatusCode(), "请求成功时HTTP状态码必须是200 OK");
     }
 
     protected void assertStatusCode(ResponseEntity<?> response, HttpStatus expectedStatus) {
-        assertEquals(expectedStatus, response.getStatusCode());
+        assertEquals(expectedStatus, response.getStatusCode(), "HTTP状态码必须是" + expectedStatus.value());
     }
 }

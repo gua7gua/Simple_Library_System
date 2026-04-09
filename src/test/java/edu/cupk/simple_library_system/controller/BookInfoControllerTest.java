@@ -63,7 +63,7 @@ class BookInfoControllerTest {
 
         long count = bookInfoController.getCount();
 
-        assertEquals(100L, count);
+        assertEquals(100L, count, "图书数量必须是100");
     }
 
     @Test
@@ -76,9 +76,9 @@ class BookInfoControllerTest {
 
         List<BookInfoView> result = bookInfoController.queryBookInfos();
 
-        assertEquals(1, result.size());
-        assertEquals("Java编程思想", result.get(0).getBookName());
-        assertEquals("计算机科学", result.get(0).getBookTypeName());
+        assertEquals(1, result.size(), "图书列表大小必须是1");
+        assertEquals("Java编程思想", result.get(0).getBookName(), "图书名称必须是'Java编程思想'");
+        assertEquals("计算机科学", result.get(0).getBookTypeName(), "图书类型名称必须是'计算机科学'");
     }
 
     @Test
@@ -92,9 +92,9 @@ class BookInfoControllerTest {
 
         PageResponse<BookInfoView> result = bookInfoController.queryBookInfosByPage(1, 10, null, null, null);
 
-        assertEquals(1, result.getCount());
-        assertEquals(1, result.getData().size());
-        assertEquals("计算机科学", result.getData().get(0).getBookTypeName());
+        assertEquals(1, result.getCount(), "图书总数必须是1");
+        assertEquals(1, result.getData().size(), "图书列表大小必须是1");
+        assertEquals("计算机科学", result.getData().get(0).getBookTypeName(), "图书类型名称必须是'计算机科学'");
     }
 
     @Test
@@ -108,8 +108,8 @@ class BookInfoControllerTest {
 
         PageResponse<BookInfoView> result = bookInfoController.queryBookInfosByPage(1, 10, "Java", null, null);
 
-        assertEquals(1, result.getCount());
-        assertEquals("Java编程思想", result.getData().get(0).getBookName());
+        assertEquals(1, result.getCount(), "过滤后图书总数必须是1");
+        assertEquals("Java编程思想", result.getData().get(0).getBookName(), "图书名称必须是'Java编程思想'");
     }
 
     @Test
@@ -123,8 +123,8 @@ class BookInfoControllerTest {
 
         PageResponse<BookInfoView> result = bookInfoController.queryBookInfosByPage(1, 10, null, "Bruce", null);
 
-        assertEquals(1, result.getCount());
-        assertEquals("Bruce Eckel", result.getData().get(0).getBookAuthor());
+        assertEquals(1, result.getCount(), "过滤后图书总数必须是1");
+        assertEquals("Bruce Eckel", result.getData().get(0).getBookAuthor(), "图书作者必须是'Bruce Eckel'");
     }
 
     @Test
@@ -138,8 +138,8 @@ class BookInfoControllerTest {
 
         PageResponse<BookInfoView> result = bookInfoController.queryBookInfosByPage(1, 10, null, null, 1);
 
-        assertEquals(1, result.getCount());
-        assertEquals(1, result.getData().get(0).getBookTypeId());
+        assertEquals(1, result.getCount(), "过滤后图书总数必须是1");
+        assertEquals(1, result.getData().get(0).getBookTypeId(), "图书类型ID必须是1");
     }
 
     @Test
@@ -153,7 +153,7 @@ class BookInfoControllerTest {
 
         PageResponse<BookInfoView> result = bookInfoController.queryBookInfosByPage(1, 10, "Java", "Bruce", 1);
 
-        assertEquals(1, result.getCount());
+        assertEquals(1, result.getCount(), "多条件过滤后图书总数必须是1");
     }
 
     @Test
@@ -169,7 +169,7 @@ class BookInfoControllerTest {
 
         Integer result = bookInfoController.addBookInfo(newBook);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "添加图书成功必须返回1");
     }
 
     @Test
@@ -186,7 +186,7 @@ class BookInfoControllerTest {
 
         Integer result = bookInfoController.addBookInfo(newBook);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "添加已借阅状态图书成功必须返回1");
     }
 
     @Test
@@ -199,7 +199,7 @@ class BookInfoControllerTest {
 
         Integer result = bookInfoController.deleteBookInfo(bookToDelete);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "删除图书成功必须返回1");
         verify(bookInfoRepository, times(1)).deleteById(1);
     }
 
@@ -210,7 +210,7 @@ class BookInfoControllerTest {
 
         Integer result = bookInfoController.deleteBookInfo(bookToDelete);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "删除空ID图书必须返回0");
     }
 
     @Test
@@ -222,7 +222,7 @@ class BookInfoControllerTest {
 
         Integer result = bookInfoController.deleteBookInfo(bookToDelete);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "删除不存在图书必须返回0");
     }
 
     @Test
@@ -239,7 +239,7 @@ class BookInfoControllerTest {
 
         Integer result = bookInfoController.deleteBookInfo(bookToDelete);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "删除已借阅图书必须返回0");
         verify(bookInfoRepository, never()).deleteById(anyInt());
     }
 
@@ -269,7 +269,7 @@ class BookInfoControllerTest {
 
         Integer result = bookInfoController.deleteBookInfos(booksToDelete);
 
-        assertEquals(2, result);
+        assertEquals(2, result, "批量删除图书成功数量必须是2（两本未借阅，一本已借阅）");
         verify(bookInfoRepository, times(1)).deleteById(1);
         verify(bookInfoRepository, never()).deleteById(2);
         verify(bookInfoRepository, times(1)).deleteById(3);
@@ -293,7 +293,7 @@ class BookInfoControllerTest {
 
         Integer result = bookInfoController.deleteBookInfos(booksToDelete);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "批量删除图书（含空ID）成功数量必须是1");
     }
 
     @Test
@@ -311,7 +311,7 @@ class BookInfoControllerTest {
 
         Integer result = bookInfoController.updateBookInfo(bookToUpdate);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "更新图书成功必须返回1");
     }
 
     @Test
@@ -321,7 +321,7 @@ class BookInfoControllerTest {
 
         Integer result = bookInfoController.updateBookInfo(bookToUpdate);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "更新空ID图书必须返回0");
     }
 
     @Test
@@ -333,6 +333,6 @@ class BookInfoControllerTest {
 
         Integer result = bookInfoController.updateBookInfo(bookToUpdate);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "更新不存在图书必须返回0");
     }
 }

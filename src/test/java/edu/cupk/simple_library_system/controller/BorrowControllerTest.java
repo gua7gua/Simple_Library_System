@@ -78,7 +78,7 @@ class BorrowControllerTest {
 
         long count = borrowController.getCount();
 
-        assertEquals(50L, count);
+        assertEquals(50L, count, "借阅记录总数必须是50");
     }
 
     @Test
@@ -93,10 +93,10 @@ class BorrowControllerTest {
 
         PageResponse<BorrowView> result = borrowController.queryBorrowsByPage(1, 10, null, null);
 
-        assertEquals(1, result.getCount());
-        assertEquals(1, result.getData().size());
-        assertEquals("testuser", result.getData().get(0).getUserName());
-        assertEquals("Java编程思想", result.getData().get(0).getBookName());
+        assertEquals(1, result.getCount(), "过滤后借阅记录总数必须是1");
+        assertEquals(1, result.getData().size(), "返回数据列表大小必须是1");
+        assertEquals("testuser", result.getData().get(0).getUserName(), "用户名必须是'testuser'");
+        assertEquals("Java编程思想", result.getData().get(0).getBookName(), "图书名称必须是'Java编程思想'");
     }
 
     @Test
@@ -111,8 +111,8 @@ class BorrowControllerTest {
 
         PageResponse<BorrowView> result = borrowController.queryBorrowsByPage(1, 10, 1, null);
 
-        assertEquals(1, result.getCount());
-        assertEquals(1, result.getData().get(0).getUserId());
+        assertEquals(1, result.getCount(), "过滤后借阅记录总数必须是1");
+        assertEquals(1, result.getData().get(0).getUserId(), "用户ID必须是1");
     }
 
     @Test
@@ -127,8 +127,8 @@ class BorrowControllerTest {
 
         PageResponse<BorrowView> result = borrowController.queryBorrowsByPage(1, 10, null, 1);
 
-        assertEquals(1, result.getCount());
-        assertEquals(1, result.getData().get(0).getBookId());
+        assertEquals(1, result.getCount(), "过滤后借阅记录总数必须是1");
+        assertEquals(1, result.getData().get(0).getBookId(), "图书ID必须是1");
     }
 
     @Test
@@ -143,7 +143,7 @@ class BorrowControllerTest {
 
         PageResponse<BorrowView> result = borrowController.queryBorrowsByPage(1, 10, 1, 1);
 
-        assertEquals(1, result.getCount());
+        assertEquals(1, result.getCount(), "多条件过滤后借阅记录总数必须是1");
     }
 
     @Test
@@ -155,7 +155,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.borrowBook(1, 1);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "借阅成功时返回结果必须是1");
         verify(bookInfoRepository, times(1)).save(any(BookInfo.class));
         verify(borrowRepository, times(1)).save(any(Borrow.class));
     }
@@ -166,7 +166,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.borrowBook(999, 1);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "用户不存在时借阅失败返回结果必须是0");
     }
 
     @Test
@@ -176,7 +176,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.borrowBook(1, 999);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "图书不存在时借阅失败返回结果必须是0");
     }
 
     @Test
@@ -192,7 +192,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.borrowBook(1, 1);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "图书已被借出时借阅失败返回结果必须是0");
     }
 
     @Test
@@ -204,7 +204,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.readerBorrowBook(1, 1);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "读者借阅成功时返回结果必须是1");
     }
 
     @Test
@@ -216,7 +216,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.returnBook(1, 1);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "还书成功时返回结果必须是1");
         verify(borrowRepository, times(1)).save(any(Borrow.class));
         verify(bookInfoRepository, times(1)).save(any(BookInfo.class));
     }
@@ -228,7 +228,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.returnBook(999, 1);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "借阅记录不存在时还书失败返回结果必须是0");
     }
 
     @Test
@@ -238,7 +238,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.returnBook(1, 999);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "图书不存在时还书失败返回结果必须是0");
     }
 
     @Test
@@ -255,7 +255,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.returnBook(1, 1);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "图书已归还时还书失败返回结果必须是0");
     }
 
     @Test
@@ -267,7 +267,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.readerReturnBook(1, 1);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "读者还书成功时返回结果必须是1");
     }
 
     @Test
@@ -280,7 +280,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.addBorrow(newBorrow);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "添加借阅记录成功时返回结果必须是1");
         verify(borrowRepository, times(1)).save(any(Borrow.class));
     }
 
@@ -295,7 +295,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.addBorrow(newBorrow);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "带借阅时间添加记录成功时返回结果必须是1");
     }
 
     @Test
@@ -308,7 +308,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.deleteBorrow(borrowToDelete);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "删除借阅记录成功时返回结果必须是1");
         verify(borrowRepository, times(1)).deleteById(1);
     }
 
@@ -319,7 +319,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.deleteBorrow(borrowToDelete);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "借阅ID为空时删除失败返回结果必须是0");
     }
 
     @Test
@@ -331,7 +331,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.deleteBorrow(borrowToDelete);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "借阅记录不存在时删除失败返回结果必须是0");
     }
 
     @Test
@@ -357,7 +357,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.deleteBorrows(borrowsToDelete);
 
-        assertEquals(2, result);
+        assertEquals(2, result, "批量删除时应成功删除2条存在的记录");
         verify(borrowRepository, times(1)).deleteById(1);
         verify(borrowRepository, times(1)).deleteById(2);
         verify(borrowRepository, never()).deleteById(999);
@@ -380,7 +380,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.deleteBorrows(borrowsToDelete);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "批量删除时应跳过ID为空的记录，只删除1条有效记录");
     }
 
     @Test
@@ -397,7 +397,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.updateBorrow(borrowToUpdate);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "更新借阅记录成功时返回结果必须是1");
         verify(borrowRepository, times(1)).save(any(Borrow.class));
     }
 
@@ -408,7 +408,7 @@ class BorrowControllerTest {
 
         Integer result = borrowController.updateBorrow(borrowToUpdate);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "借阅ID为空时更新失败返回结果必须是0");
     }
 
     @Test
@@ -420,6 +420,6 @@ class BorrowControllerTest {
 
         Integer result = borrowController.updateBorrow(borrowToUpdate);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "借阅记录不存在时更新失败返回结果必须是0");
     }
 }

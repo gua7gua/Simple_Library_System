@@ -61,9 +61,9 @@ class UserControllerTest {
 
         ApiResponse<?> response = userController.login(loginRequest);
 
-        assertEquals(200, response.getStatus());
-        assertEquals("登录成功", response.getMessage());
-        assertNotNull(response.getData());
+        assertEquals(200, response.getStatus(), "登录成功业务状态码必须是200");
+        assertEquals("登录成功", response.getMessage(), "登录成功消息必须是'登录成功'");
+        assertNotNull(response.getData(), "登录成功响应数据不能为null");
     }
 
     @Test
@@ -73,8 +73,8 @@ class UserControllerTest {
 
         ApiResponse<?> response = userController.login(loginRequest);
 
-        assertEquals(420, response.getStatus());
-        assertEquals("用户名或密码错误，或角色不匹配", response.getMessage());
+        assertEquals(420, response.getStatus(), "登录失败业务状态码必须是420");
+        assertEquals("用户名或密码错误，或角色不匹配", response.getMessage(), "登录失败消息必须是'用户名或密码错误，或角色不匹配'");
     }
 
     @Test
@@ -84,11 +84,13 @@ class UserControllerTest {
 
         ApiResponse<?> response = userController.info("test-token");
 
-        assertEquals(200, response.getStatus());
-        assertEquals("获取成功", response.getMessage());
+        assertEquals(200, response.getStatus(), "获取用户信息成功业务状态码必须是200");
+        assertEquals("获取成功", response.getMessage(), "获取用户信息成功消息必须是'获取成功'");
+        assertNotNull(response.getData(), "获取用户信息响应数据不能为null");
+
         User user = (User) response.getData();
-        assertEquals("testuser", user.getUserName());
-        assertEquals("******", user.getUserPassword());
+        assertEquals("testuser", user.getUserName(), "用户名必须是'testuser'");
+        assertEquals("******", user.getUserPassword(), "密码必须被掩码显示为'******'");
     }
 
     @Test
@@ -97,8 +99,8 @@ class UserControllerTest {
 
         ApiResponse<?> response = userController.info("invalid-token");
 
-        assertEquals(420, response.getStatus());
-        assertEquals("Token无效或已过期", response.getMessage());
+        assertEquals(420, response.getStatus(), "无效token业务状态码必须是420");
+        assertEquals("Token无效或已过期", response.getMessage(), "无效token消息必须是'Token无效或已过期'");
     }
 
     @Test
@@ -108,8 +110,8 @@ class UserControllerTest {
 
         ApiResponse<?> response = userController.info("test-token");
 
-        assertEquals(420, response.getStatus());
-        assertEquals("用户不存在", response.getMessage());
+        assertEquals(420, response.getStatus(), "用户不存在业务状态码必须是420");
+        assertEquals("用户不存在", response.getMessage(), "用户不存在消息必须是'用户不存在'");
     }
 
     @Test
@@ -118,8 +120,8 @@ class UserControllerTest {
 
         ApiResponse<?> response = userController.logout("test-token");
 
-        assertEquals(200, response.getStatus());
-        assertEquals("登出成功", response.getMessage());
+        assertEquals(200, response.getStatus(), "登出成功业务状态码必须是200");
+        assertEquals("登出成功", response.getMessage(), "登出成功消息必须是'登出成功'");
         verify(tokenService, times(1)).remove("test-token");
     }
 
@@ -130,7 +132,7 @@ class UserControllerTest {
 
         Integer result = userController.register("newuser", "password");
 
-        assertEquals(1, result);
+        assertEquals(1, result, "注册成功必须返回1");
     }
 
     @Test
@@ -139,7 +141,7 @@ class UserControllerTest {
 
         Integer result = userController.register("testuser", "password");
 
-        assertEquals(0, result);
+        assertEquals(0, result, "用户名已存在必须返回0");
     }
 
     @Test
@@ -156,7 +158,7 @@ class UserControllerTest {
 
         Integer result = userController.alterPassword(request);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "修改密码成功必须返回1");
     }
 
     @Test
@@ -168,7 +170,7 @@ class UserControllerTest {
 
         Integer result = userController.alterPassword(request);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "用户不存在修改密码必须返回0");
     }
 
     @Test
@@ -183,7 +185,7 @@ class UserControllerTest {
 
         Integer result = userController.alterPassword(request);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "凭据无效修改密码必须返回0");
     }
 
     @Test
@@ -192,7 +194,7 @@ class UserControllerTest {
 
         long count = userController.getCount();
 
-        assertEquals(10L, count);
+        assertEquals(10L, count, "用户数量必须是10");
     }
 
     @Test
@@ -204,8 +206,8 @@ class UserControllerTest {
 
         List<User> result = userController.queryUsers();
 
-        assertEquals(1, result.size());
-        assertEquals("******", result.get(0).getUserPassword());
+        assertEquals(1, result.size(), "用户列表大小必须是1");
+        assertEquals("******", result.get(0).getUserPassword(), "密码必须被掩码显示为'******'");
     }
 
     @Test
@@ -218,8 +220,8 @@ class UserControllerTest {
 
         PageResponse<User> result = userController.queryUsersByPage(1, 10, null);
 
-        assertEquals(1, result.getCount());
-        assertEquals(1, result.getData().size());
+        assertEquals(1, result.getCount(), "用户总数必须是1");
+        assertEquals(1, result.getData().size(), "用户列表大小必须是1");
     }
 
     @Test
@@ -232,8 +234,8 @@ class UserControllerTest {
 
         PageResponse<User> result = userController.queryUsersByPage(1, 10, "test");
 
-        assertEquals(1, result.getCount());
-        assertEquals(1, result.getData().size());
+        assertEquals(1, result.getCount(), "过滤后用户总数必须是1");
+        assertEquals(1, result.getData().size(), "过滤后用户列表大小必须是1");
     }
 
     @Test
@@ -248,7 +250,7 @@ class UserControllerTest {
 
         Integer result = userController.addUser(newUser);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "添加用户成功必须返回1");
     }
 
     @Test
@@ -260,7 +262,7 @@ class UserControllerTest {
 
         Integer result = userController.addUser(newUser);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "用户名已存在添加用户必须返回0");
     }
 
     @Test
@@ -273,7 +275,7 @@ class UserControllerTest {
 
         Integer result = userController.deleteUser(userToDelete);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "删除用户成功必须返回1");
         verify(userRepository, times(1)).deleteById(1);
     }
 
@@ -286,7 +288,7 @@ class UserControllerTest {
 
         Integer result = userController.deleteUser(userToDelete);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "用户不存在删除必须返回0");
     }
 
     @Test
@@ -305,7 +307,7 @@ class UserControllerTest {
 
         Integer result = userController.deleteUsers(usersToDelete);
 
-        assertEquals(2, result);
+        assertEquals(2, result, "批量删除用户成功数量必须是2");
         verify(userRepository, times(2)).deleteById(anyInt());
     }
 
@@ -320,7 +322,7 @@ class UserControllerTest {
 
         Integer result = userController.updateUser(userToUpdate);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "更新用户成功必须返回1");
     }
 
     @Test
@@ -332,6 +334,6 @@ class UserControllerTest {
 
         Integer result = userController.updateUser(userToUpdate);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "用户不存在更新必须返回0");
     }
 }

@@ -62,7 +62,7 @@ class BookTypeControllerTest {
 
         long count = bookTypeController.getCount();
 
-        assertEquals(6L, count);
+        assertEquals(6L, count, "图书类型总数必须是6");
     }
 
     @Test
@@ -71,13 +71,13 @@ class BookTypeControllerTest {
 
         List<BookType> result = bookTypeController.queryBookTypes();
 
-        assertEquals(6, result.size());
-        assertEquals("计算机科学", result.get(0).getBookTypeName());
-        assertEquals("历史", result.get(1).getBookTypeName());
-        assertEquals("文学", result.get(2).getBookTypeName());
-        assertEquals("科幻", result.get(3).getBookTypeName());
-        assertEquals("小说", result.get(4).getBookTypeName());
-        assertEquals("外语", result.get(5).getBookTypeName());
+        assertEquals(6, result.size(), "返回的图书类型数量必须是6");
+        assertEquals("计算机科学", result.get(0).getBookTypeName(), "第一个类型名称必须是'计算机科学'");
+        assertEquals("历史", result.get(1).getBookTypeName(), "第二个类型名称必须是'历史'");
+        assertEquals("文学", result.get(2).getBookTypeName(), "第三个类型名称必须是'文学'");
+        assertEquals("科幻", result.get(3).getBookTypeName(), "第四个类型名称必须是'科幻'");
+        assertEquals("小说", result.get(4).getBookTypeName(), "第五个类型名称必须是'小说'");
+        assertEquals("外语", result.get(5).getBookTypeName(), "第六个类型名称必须是'外语'");
     }
 
     @Test
@@ -86,8 +86,8 @@ class BookTypeControllerTest {
 
         List<BookType> result = bookTypeController.readerQueryBookTypes();
 
-        assertEquals(6, result.size());
-        assertEquals("计算机科学", result.get(0).getBookTypeName());
+        assertEquals(6, result.size(), "读者查询返回的图书类型数量必须是6");
+        assertEquals("计算机科学", result.get(0).getBookTypeName(), "第一个类型名称必须是'计算机科学'");
     }
 
     @Test
@@ -98,8 +98,8 @@ class BookTypeControllerTest {
 
         PageResponse<BookType> result = bookTypeController.queryBookTypesByPage(1, 10, null);
 
-        assertEquals(6, result.getCount());
-        assertEquals(6, result.getData().size());
+        assertEquals(6, result.getCount(), "分页查询总记录数必须是6");
+        assertEquals(6, result.getData().size(), "分页查询返回数据列表大小必须是6");
     }
 
     @Test
@@ -112,9 +112,9 @@ class BookTypeControllerTest {
 
         PageResponse<BookType> result = bookTypeController.queryBookTypesByPage(1, 10, "计算机");
 
-        assertEquals(1, result.getCount());
-        assertEquals(1, result.getData().size());
-        assertEquals("计算机科学", result.getData().get(0).getBookTypeName());
+        assertEquals(1, result.getCount(), "按名称过滤后总记录数必须是1");
+        assertEquals(1, result.getData().size(), "按名称过滤后返回数据列表大小必须是1");
+        assertEquals("计算机科学", result.getData().get(0).getBookTypeName(), "过滤结果类型名称必须是'计算机科学'");
     }
 
     @Test
@@ -128,7 +128,7 @@ class BookTypeControllerTest {
 
         PageResponse<BookType> result = bookTypeController.queryBookTypesByPage(1, 10, "说");
 
-        assertEquals(2, result.getCount());
+        assertEquals(2, result.getCount(), "模糊搜索'说'字应返回2条记录");
     }
 
     @Test
@@ -141,7 +141,7 @@ class BookTypeControllerTest {
 
         Integer result = bookTypeController.addBookType(newType);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "添加图书类型成功时返回结果必须是1");
         verify(bookTypeRepository, times(1)).save(any(BookType.class));
     }
 
@@ -155,7 +155,7 @@ class BookTypeControllerTest {
 
         Integer result = bookTypeController.addBookType(newType);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "添加预设类型成功时返回结果必须是1");
     }
 
     @Test
@@ -168,7 +168,7 @@ class BookTypeControllerTest {
 
         Integer result = bookTypeController.deleteBookType(typeToDelete);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "删除图书类型成功时返回结果必须是1");
         verify(bookTypeRepository, times(1)).deleteById(1);
     }
 
@@ -179,7 +179,7 @@ class BookTypeControllerTest {
 
         Integer result = bookTypeController.deleteBookType(typeToDelete);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "类型ID为空时删除失败返回结果必须是0");
     }
 
     @Test
@@ -191,7 +191,7 @@ class BookTypeControllerTest {
 
         Integer result = bookTypeController.deleteBookType(typeToDelete);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "图书类型不存在时删除失败返回结果必须是0");
     }
 
     @Test
@@ -217,7 +217,7 @@ class BookTypeControllerTest {
 
         Integer result = bookTypeController.deleteBookTypes(typesToDelete);
 
-        assertEquals(2, result);
+        assertEquals(2, result, "批量删除时应成功删除2条存在的记录");
         verify(bookTypeRepository, times(1)).deleteById(1);
         verify(bookTypeRepository, times(1)).deleteById(2);
         verify(bookTypeRepository, never()).deleteById(999);
@@ -240,7 +240,7 @@ class BookTypeControllerTest {
 
         Integer result = bookTypeController.deleteBookTypes(typesToDelete);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "批量删除时应跳过ID为空的记录，只删除1条有效记录");
     }
 
     @Test
@@ -255,7 +255,7 @@ class BookTypeControllerTest {
 
         Integer result = bookTypeController.updateBookType(typeToUpdate);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "更新图书类型成功时返回结果必须是1");
         verify(bookTypeRepository, times(1)).save(any(BookType.class));
     }
 
@@ -266,7 +266,7 @@ class BookTypeControllerTest {
 
         Integer result = bookTypeController.updateBookType(typeToUpdate);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "类型ID为空时更新失败返回结果必须是0");
     }
 
     @Test
@@ -278,7 +278,7 @@ class BookTypeControllerTest {
 
         Integer result = bookTypeController.updateBookType(typeToUpdate);
 
-        assertEquals(0, result);
+        assertEquals(0, result, "图书类型不存在时更新失败返回结果必须是0");
     }
 
     @Test
@@ -293,6 +293,6 @@ class BookTypeControllerTest {
 
         Integer result = bookTypeController.updateBookType(typeToUpdate);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "更新预设类型成功时返回结果必须是1");
     }
 }
