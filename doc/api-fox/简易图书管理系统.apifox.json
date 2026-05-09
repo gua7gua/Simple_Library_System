@@ -1,0 +1,4841 @@
+{
+  "apifoxProject": "1.0.0",
+  "$schema": {
+    "app": "apifox",
+    "type": "project",
+    "version": "1.2.0"
+  },
+  "info": {
+    "name": "简易图书管理系统",
+    "description": "",
+    "mockRule": {
+      "rules": [],
+      "enableSystemRule": true
+    }
+  },
+  "projectSetting": {
+    "id": "8279761",
+    "auth": {},
+    "securityScheme": {},
+    "gateway": [],
+    "language": "zh-CN",
+    "apiStatuses": [
+      "developing",
+      "testing",
+      "released",
+      "deprecated"
+    ],
+    "mockSettings": {},
+    "preProcessors": [],
+    "postProcessors": [],
+    "advancedSettings": {
+      "enableJsonc": false,
+      "enableBigint": false,
+      "responseValidate": true,
+      "enableTestScenarioSetting": false,
+      "enableYAPICompatScript": false,
+      "isDefaultUrlEncoding": 2,
+      "publishedDocUrlRules": {
+        "defaultRule": "RESOURCE_KEY_ONLY",
+        "resourceKeyStandard": "NEW"
+      }
+    },
+    "initialDisabledMockIds": [],
+    "servers": [
+      {
+        "id": "default",
+        "name": "默认服务",
+        "moduleId": 7691663
+      }
+    ],
+    "cloudMock": {
+      "security": "free",
+      "enable": false,
+      "tokenKey": "apifoxToken"
+    }
+  },
+  "apiCollection": [
+    {
+      "name": "根目录",
+      "id": 85026530,
+      "auth": {},
+      "securityScheme": {},
+      "parentId": 0,
+      "serverId": "",
+      "description": "",
+      "identityPattern": {
+        "httpApi": {
+          "type": "methodAndPath",
+          "bodyType": "",
+          "fields": []
+        }
+      },
+      "shareSettings": {},
+      "visibility": "SHARED",
+      "moduleId": 7691663,
+      "preProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "postProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "inheritPostProcessors": {},
+      "inheritPreProcessors": {},
+      "items": [
+        {
+          "name": "UserController",
+          "id": 85026852,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 7691663,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "login",
+              "api": {
+                "id": "454319135",
+                "method": "post",
+                "path": "/user/login",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "154886030",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678978"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678979",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "info",
+              "api": {
+                "id": "454319136",
+                "method": "get",
+                "path": "/user/info",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "token",
+                      "required": true,
+                      "description": "",
+                      "type": "string",
+                      "schema": {
+                        "type": "string"
+                      },
+                      "id": "VMClbK6cQD"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "103651506",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678981"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 12,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "logout",
+              "api": {
+                "id": "454319137",
+                "method": "get",
+                "path": "/user/logout",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "token",
+                      "required": true,
+                      "description": "",
+                      "type": "string",
+                      "schema": {
+                        "type": "string"
+                      },
+                      "id": "9z0joXGiqZ"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "195541816",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678982"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 18,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "register",
+              "api": {
+                "id": "454319138",
+                "method": "post",
+                "path": "/user/register",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "164975122",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678977",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 24,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "alterPassword",
+              "api": {
+                "id": "454319139",
+                "method": "post",
+                "path": "/user/alterPassword",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "144303526",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678983",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 30,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "readerAlterPassword",
+              "api": {
+                "id": "454319140",
+                "method": "post",
+                "path": "/user/reader/alterPassword",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "148525889",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678983",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 36,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "getCount",
+              "api": {
+                "id": "454319141",
+                "method": "get",
+                "path": "/user/getCount",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "130029454",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 42,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "queryUsers",
+              "api": {
+                "id": "454319142",
+                "method": "get",
+                "path": "/user/queryUsers",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "160049303",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/271678980",
+                        "description": "edu.cupk.simple_library_system.entity.User"
+                      }
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 48,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "queryUsersByPage",
+              "api": {
+                "id": "454319143",
+                "method": "get",
+                "path": "/user/queryUsersByPage",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "page",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "oWy9uZwXoA"
+                    },
+                    {
+                      "name": "limit",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "JeqHHaXtiw"
+                    },
+                    {
+                      "name": "username",
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "schema": {
+                        "type": "string"
+                      },
+                      "id": "lsKRB7i38y"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "138672300",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678984"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 54,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "addUser",
+              "api": {
+                "id": "454319144",
+                "method": "post",
+                "path": "/user/addUser",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "111704050",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678980",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 60,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "deleteUser",
+              "api": {
+                "id": "454319145",
+                "method": "delete",
+                "path": "/user/deleteUser",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "176947077",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678980",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 66,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "deleteUsers",
+              "api": {
+                "id": "454319146",
+                "method": "delete",
+                "path": "/user/deleteUsers",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "157565454",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/271678980",
+                      "description": "edu.cupk.simple_library_system.entity.User"
+                    },
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 72,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "updateUser",
+              "api": {
+                "id": "454319147",
+                "method": "put",
+                "path": "/user/updateUser",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "138541700",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678980",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 78,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "BorrowController",
+          "id": 85026853,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 7691663,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "getCount",
+              "api": {
+                "id": "454319148",
+                "method": "get",
+                "path": "/borrow/getCount",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "101814531",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "queryBorrowsByPage",
+              "api": {
+                "id": "454319149",
+                "method": "get",
+                "path": "/borrow/queryBorrowsByPage",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "page",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "jwjnGZ0BCE"
+                    },
+                    {
+                      "name": "limit",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "lJUTe5CZOD"
+                    },
+                    {
+                      "name": "userid",
+                      "required": false,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "a1pVIjTefY"
+                    },
+                    {
+                      "name": "bookid",
+                      "required": false,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "G5LwFGafZD"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "158839213",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678986"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 12,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "borrowBook",
+              "api": {
+                "id": "454319150",
+                "method": "post",
+                "path": "/borrow/borrowBook",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "userid",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "PCI6VJZuqv"
+                    },
+                    {
+                      "name": "bookid",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "Rz0ijUWfWi"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "101523024",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 18,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "readerBorrowBook",
+              "api": {
+                "id": "454319151",
+                "method": "post",
+                "path": "/borrow/reader/borrowBook",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "userid",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "SIYFfstuiA"
+                    },
+                    {
+                      "name": "bookid",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "kA1ma7T5wa"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "114313896",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 24,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "returnBook",
+              "api": {
+                "id": "454319152",
+                "method": "post",
+                "path": "/borrow/returnBook",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "borrowid",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "F1ZjgT43f2"
+                    },
+                    {
+                      "name": "bookid",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "GuLb9KbplI"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "128877215",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 30,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "readerReturnBook",
+              "api": {
+                "id": "454319153",
+                "method": "post",
+                "path": "/borrow/reader/returnBook",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "borrowid",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "hT0mSxYcYi"
+                    },
+                    {
+                      "name": "bookid",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "GPenGZpiuy"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "138915909",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 36,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "addBorrow",
+              "api": {
+                "id": "454319154",
+                "method": "post",
+                "path": "/borrow/addBorrow",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "110148122",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678987",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 42,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "deleteBorrow",
+              "api": {
+                "id": "454319155",
+                "method": "delete",
+                "path": "/borrow/deleteBorrow",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "161520718",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678987",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 48,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "deleteBorrows",
+              "api": {
+                "id": "454319156",
+                "method": "delete",
+                "path": "/borrow/deleteBorrows",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "112448949",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/271678987",
+                      "description": "edu.cupk.simple_library_system.entity.Borrow"
+                    },
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 54,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "updateBorrow",
+              "api": {
+                "id": "454319157",
+                "method": "put",
+                "path": "/borrow/updateBorrow",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "122782310",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678987",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 60,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "UploadController",
+          "id": 85026854,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 7691663,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "uploadImg",
+              "api": {
+                "id": "454319158",
+                "method": "post",
+                "path": "/update/updateImg",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "137315791",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678988"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "multipart/form-data",
+                  "parameters": [
+                    {
+                      "id": -734961143,
+                      "name": "file",
+                      "type": "file",
+                      "required": true,
+                      "description": ""
+                    }
+                  ],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "BookInfoController",
+          "id": 85026855,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 7691663,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "getCount",
+              "api": {
+                "id": "454319159",
+                "method": "get",
+                "path": "/bookInfo/getCount",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "197116072",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "queryBookInfos",
+              "api": {
+                "id": "454319160",
+                "method": "get",
+                "path": "/bookInfo/queryBookInfos",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "192271605",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/271678989",
+                        "description": "edu.cupk.simple_library_system.dto.BookInfoView"
+                      }
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 12,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "queryBookInfosByPage",
+              "api": {
+                "id": "454319161",
+                "method": "get",
+                "path": "/bookInfo/queryBookInfosByPage",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "page",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "c7suoQqQ9T"
+                    },
+                    {
+                      "name": "limit",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "mx8vstDUdR"
+                    },
+                    {
+                      "name": "bookname",
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "schema": {
+                        "type": "string"
+                      },
+                      "id": "zArs98dcwA"
+                    },
+                    {
+                      "name": "bookauthor",
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "schema": {
+                        "type": "string"
+                      },
+                      "id": "9BTGzy3L6H"
+                    },
+                    {
+                      "name": "booktypeid",
+                      "required": false,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "ESF5hCCG0X"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "111802435",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678990"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 18,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "addBookInfo",
+              "api": {
+                "id": "454319162",
+                "method": "post",
+                "path": "/bookInfo/addBookInfo",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "166198365",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678991",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 24,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "deleteBookInfo",
+              "api": {
+                "id": "454319163",
+                "method": "delete",
+                "path": "/bookInfo/deleteBookInfo",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "137181471",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678991",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 30,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "deleteBookInfos",
+              "api": {
+                "id": "454319164",
+                "method": "delete",
+                "path": "/bookInfo/deleteBookInfos",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "146487361",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/271678991",
+                      "description": "edu.cupk.simple_library_system.entity.BookInfo"
+                    },
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 36,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "updateBookInfo",
+              "api": {
+                "id": "454319165",
+                "method": "put",
+                "path": "/bookInfo/updateBookInfo",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "187200331",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678991",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 42,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "BookTypeController",
+          "id": 85026856,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 7691663,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "getCount",
+              "api": {
+                "id": "454319166",
+                "method": "get",
+                "path": "/bookType/getCount",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "153296746",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "queryBookTypes",
+              "api": {
+                "id": "454319167",
+                "method": "get",
+                "path": "/bookType/queryBookTypes",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "134515500",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/271678992",
+                        "description": "edu.cupk.simple_library_system.entity.BookType"
+                      }
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 12,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "readerQueryBookTypes",
+              "api": {
+                "id": "454319168",
+                "method": "get",
+                "path": "/bookType/reader/queryBookTypes",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "123780023",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/271678992",
+                        "description": "edu.cupk.simple_library_system.entity.BookType"
+                      }
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 18,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "queryBookTypesByPage",
+              "api": {
+                "id": "454319169",
+                "method": "get",
+                "path": "/bookType/queryBookTypesByPage",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "page",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "qQIzG0VFwV"
+                    },
+                    {
+                      "name": "limit",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "q6a4JSY9XH"
+                    },
+                    {
+                      "name": "booktypename",
+                      "required": false,
+                      "description": "",
+                      "type": "string",
+                      "schema": {
+                        "type": "string"
+                      },
+                      "id": "RQJ6KKa5d2"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "124328736",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678993"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 24,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "addBookType",
+              "api": {
+                "id": "454319170",
+                "method": "post",
+                "path": "/bookType/addBookType",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "197921585",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678992",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 30,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "deleteBookType",
+              "api": {
+                "id": "454319171",
+                "method": "delete",
+                "path": "/bookType/deleteBookType",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "123879909",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678992",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 36,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "deleteBookTypes",
+              "api": {
+                "id": "454319172",
+                "method": "delete",
+                "path": "/bookType/deleteBookTypes",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "111203513",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/271678992",
+                      "description": "edu.cupk.simple_library_system.entity.BookType"
+                    },
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 42,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "updateBookType",
+              "api": {
+                "id": "454319173",
+                "method": "put",
+                "path": "/bookType/updateBookType",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "186476528",
+                    "code": 200,
+                    "jsonSchema": {
+                      "type": "integer"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678992",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 48,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "BookDonationController",
+          "id": 85026857,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 7691663,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "submitDonation",
+              "api": {
+                "id": "454319174",
+                "method": "post",
+                "path": "/donation/submit",
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "199492135",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678995"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678996",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "getRecords",
+              "api": {
+                "id": "454319175",
+                "method": "get",
+                "path": "/donation/records",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "phone",
+                      "required": true,
+                      "description": "",
+                      "type": "string",
+                      "schema": {
+                        "type": "string"
+                      },
+                      "id": "teJAGaXHxv"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "133106988",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678995"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 12,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "AdminDonationController",
+          "id": 85026858,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 7691663,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "getDonationList",
+              "api": {
+                "id": "454319176",
+                "method": "get",
+                "path": "/admin/donation/list",
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "page",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "cn6qsmJd6U"
+                    },
+                    {
+                      "name": "limit",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "o02kbYetgl"
+                    },
+                    {
+                      "name": "status",
+                      "required": false,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      },
+                      "id": "iFyc1vk00b"
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "118805952",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678998"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 6,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "getDonationDetail",
+              "api": {
+                "id": "454319177",
+                "method": "get",
+                "path": "/admin/donation/{id}",
+                "parameters": {
+                  "path": [
+                    {
+                      "id": "id#0",
+                      "name": "id",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "153240524",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678995"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "none",
+                  "parameters": [],
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 12,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "updateStatus",
+              "api": {
+                "id": "454319178",
+                "method": "put",
+                "path": "/admin/donation/{id}/status",
+                "parameters": {
+                  "path": [
+                    {
+                      "id": "id#0",
+                      "name": "id",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "191847530",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678995"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271678999",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 18,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            },
+            {
+              "name": "updateRemark",
+              "api": {
+                "id": "454319179",
+                "method": "put",
+                "path": "/admin/donation/{id}/remark",
+                "parameters": {
+                  "path": [
+                    {
+                      "id": "id#0",
+                      "name": "id",
+                      "required": true,
+                      "description": "",
+                      "type": "integer",
+                      "schema": {
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "auth": {},
+                "securityScheme": {},
+                "commonParameters": {},
+                "responses": [
+                  {
+                    "id": "116694727",
+                    "code": 200,
+                    "jsonSchema": {
+                      "$ref": "#/definitions/271678995"
+                    },
+                    "itemSchema": {},
+                    "contentType": "json"
+                  }
+                ],
+                "responseExamples": [],
+                "requestBody": {
+                  "type": "application/json",
+                  "parameters": [],
+                  "jsonSchema": {
+                    "$ref": "#/definitions/271679000",
+                    "description": ""
+                  },
+                  "oasExtensions": ""
+                },
+                "description": "",
+                "tags": [],
+                "status": "released",
+                "serverId": "",
+                "operationId": "",
+                "sourceUrl": "",
+                "ordering": 24,
+                "cases": [],
+                "mocks": [],
+                "customApiFields": "{}",
+                "advancedSettings": {
+                  "disabledSystemHeaders": {}
+                },
+                "mockScript": {},
+                "codeSamples": [],
+                "commonResponseStatus": {},
+                "responseChildren": [],
+                "visibility": "INHERITED",
+                "moduleId": 7691663,
+                "oasExtensions": "",
+                "type": "http",
+                "preProcessors": [],
+                "postProcessors": [],
+                "inheritPostProcessors": {},
+                "inheritPreProcessors": {}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "socketCollection": [],
+  "docCollection": [],
+  "webSocketCollection": [],
+  "socketIOCollection": [],
+  "mcpClientCollection": [],
+  "responseCollection": [
+    {
+      "_databaseId": 9081651,
+      "updatedAt": "2026-05-08T08:56:40.000Z",
+      "name": "根目录",
+      "type": "root",
+      "children": [],
+      "moduleId": 7691663,
+      "parentId": 0,
+      "id": 9081651,
+      "ordering": [],
+      "items": []
+    }
+  ],
+  "schemaCollection": [
+    {
+      "id": 19504749,
+      "name": "根目录",
+      "visibility": "SHARED",
+      "moduleId": 7691663,
+      "items": [
+        {
+          "name": "MapString",
+          "displayName": "",
+          "id": "#/definitions/271678977",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                }
+              },
+              "x-apifox-orders": [
+                "key"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "ApiResponseMapString",
+          "displayName": "",
+          "id": "#/definitions/271678978",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "message": {
+                  "type": "string",
+                  "description": ""
+                },
+                "data": {
+                  "$ref": "#/definitions/271678977",
+                  "description": ""
+                },
+                "timestamp": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                }
+              },
+              "x-apifox-orders": [
+                "status",
+                "message",
+                "data",
+                "timestamp"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "LoginRequest",
+          "displayName": "",
+          "id": "#/definitions/271678979",
+          "description": "edu.cupk.simple_library_system.dto.LoginRequest",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "isadmin": {
+                  "type": "integer",
+                  "description": "",
+                  "minimum": -127,
+                  "maximum": 128
+                },
+                "username": {
+                  "type": "string",
+                  "description": ""
+                },
+                "userpassword": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "isadmin",
+                "username",
+                "userpassword"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "User",
+          "displayName": "",
+          "id": "#/definitions/271678980",
+          "description": "edu.cupk.simple_library_system.entity.User",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "userid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "username": {
+                  "type": "string",
+                  "description": ""
+                },
+                "userpassword": {
+                  "type": "string",
+                  "description": ""
+                },
+                "isadmin": {
+                  "type": "integer",
+                  "description": "",
+                  "minimum": -127,
+                  "maximum": 128
+                }
+              },
+              "x-apifox-orders": [
+                "userid",
+                "username",
+                "userpassword",
+                "isadmin"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "ApiResponseUser",
+          "displayName": "",
+          "id": "#/definitions/271678981",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "message": {
+                  "type": "string",
+                  "description": ""
+                },
+                "data": {
+                  "$ref": "#/definitions/271678980",
+                  "description": ""
+                },
+                "timestamp": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                }
+              },
+              "x-apifox-orders": [
+                "status",
+                "message",
+                "data",
+                "timestamp"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "ApiResponseVoid",
+          "displayName": "",
+          "id": "#/definitions/271678982",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "message": {
+                  "type": "string",
+                  "description": ""
+                },
+                "data": {
+                  "description": "",
+                  "type": "null"
+                },
+                "timestamp": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                }
+              },
+              "x-apifox-orders": [
+                "status",
+                "message",
+                "data",
+                "timestamp"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "AlterPasswordRequest",
+          "displayName": "",
+          "id": "#/definitions/271678983",
+          "description": "edu.cupk.simple_library_system.dto.AlterPasswordRequest",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "userid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "username": {
+                  "type": "string",
+                  "description": ""
+                },
+                "isadmin": {
+                  "type": "integer",
+                  "description": "",
+                  "minimum": -127,
+                  "maximum": 128
+                },
+                "oldPassword": {
+                  "type": "string",
+                  "description": ""
+                },
+                "newPassword": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "userid",
+                "username",
+                "isadmin",
+                "oldPassword",
+                "newPassword"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "PageResponseUser",
+          "displayName": "",
+          "id": "#/definitions/271678984",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "message": {
+                  "type": "string",
+                  "description": ""
+                },
+                "count": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/271678980",
+                    "description": "edu.cupk.simple_library_system.entity.User"
+                  },
+                  "description": ""
+                },
+                "singleData": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "code",
+                "message",
+                "count",
+                "data",
+                "singleData"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "BorrowView",
+          "displayName": "",
+          "id": "#/definitions/271678985",
+          "description": "edu.cupk.simple_library_system.dto.BorrowView",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "borrowid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "userid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "username": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "bookname": {
+                  "type": "string",
+                  "description": ""
+                },
+                "borrowtime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "returntime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                }
+              },
+              "x-apifox-orders": [
+                "borrowid",
+                "userid",
+                "username",
+                "bookid",
+                "bookname",
+                "borrowtime",
+                "returntime"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "PageResponseBorrowView",
+          "displayName": "",
+          "id": "#/definitions/271678986",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "message": {
+                  "type": "string",
+                  "description": ""
+                },
+                "count": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/271678985",
+                    "description": "edu.cupk.simple_library_system.dto.BorrowView"
+                  },
+                  "description": ""
+                },
+                "singleData": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "code",
+                "message",
+                "count",
+                "data",
+                "singleData"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "Borrow",
+          "displayName": "",
+          "id": "#/definitions/271678987",
+          "description": "edu.cupk.simple_library_system.entity.Borrow",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "borrowid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "userid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "bookid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "borrowtime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "returntime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                }
+              },
+              "x-apifox-orders": [
+                "borrowid",
+                "userid",
+                "bookid",
+                "borrowtime",
+                "returntime"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "PageResponseString",
+          "displayName": "",
+          "id": "#/definitions/271678988",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "message": {
+                  "type": "string",
+                  "description": ""
+                },
+                "count": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": ""
+                },
+                "singleData": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "code",
+                "message",
+                "count",
+                "data",
+                "singleData"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "BookInfoView",
+          "displayName": "",
+          "id": "#/definitions/271678989",
+          "description": "edu.cupk.simple_library_system.dto.BookInfoView",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "bookid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "bookname": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookauthor": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookprice": {
+                  "type": "number",
+                  "description": ""
+                },
+                "booktypeid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "booktypename": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookdesc": {
+                  "type": "string",
+                  "description": ""
+                },
+                "isborrowed": {
+                  "type": "integer",
+                  "description": "",
+                  "minimum": -127,
+                  "maximum": 128
+                },
+                "bookimg": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "bookid",
+                "bookname",
+                "bookauthor",
+                "bookprice",
+                "booktypeid",
+                "booktypename",
+                "bookdesc",
+                "isborrowed",
+                "bookimg"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "PageResponseBookInfoView",
+          "displayName": "",
+          "id": "#/definitions/271678990",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "message": {
+                  "type": "string",
+                  "description": ""
+                },
+                "count": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/271678989",
+                    "description": "edu.cupk.simple_library_system.dto.BookInfoView"
+                  },
+                  "description": ""
+                },
+                "singleData": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "code",
+                "message",
+                "count",
+                "data",
+                "singleData"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "BookInfo",
+          "displayName": "",
+          "id": "#/definitions/271678991",
+          "description": "edu.cupk.simple_library_system.entity.BookInfo",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "bookid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "bookname": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookauthor": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookprice": {
+                  "type": "number",
+                  "description": ""
+                },
+                "booktypeid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "bookdesc": {
+                  "type": "string",
+                  "description": ""
+                },
+                "isborrowed": {
+                  "type": "integer",
+                  "description": "",
+                  "minimum": -127,
+                  "maximum": 128
+                },
+                "bookimg": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "bookid",
+                "bookname",
+                "bookauthor",
+                "bookprice",
+                "booktypeid",
+                "bookdesc",
+                "isborrowed",
+                "bookimg"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "BookType",
+          "displayName": "",
+          "id": "#/definitions/271678992",
+          "description": "edu.cupk.simple_library_system.entity.BookType",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "booktypeid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "booktypename": {
+                  "type": "string",
+                  "description": ""
+                },
+                "booktypedesc": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "booktypeid",
+                "booktypename",
+                "booktypedesc"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "PageResponseBookType",
+          "displayName": "",
+          "id": "#/definitions/271678993",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "message": {
+                  "type": "string",
+                  "description": ""
+                },
+                "count": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/271678992",
+                    "description": "edu.cupk.simple_library_system.entity.BookType"
+                  },
+                  "description": ""
+                },
+                "singleData": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "code",
+                "message",
+                "count",
+                "data",
+                "singleData"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "data",
+          "displayName": "",
+          "id": "#/definitions/271678994",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "donationid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "donorname": {
+                  "type": "string",
+                  "description": ""
+                },
+                "donorphone": {
+                  "type": "string",
+                  "description": ""
+                },
+                "donoremail": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookisbn": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookname": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookauthor": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookpublisher": {
+                  "type": "string",
+                  "description": ""
+                },
+                "status": {
+                  "type": "integer",
+                  "description": "",
+                  "minimum": -127,
+                  "maximum": 128
+                },
+                "statustext": {
+                  "type": "string",
+                  "description": ""
+                },
+                "applytime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "contacttime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "receivetime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "donorremark": {
+                  "type": "string",
+                  "description": ""
+                },
+                "staffremark": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "donationid",
+                "donorname",
+                "donorphone",
+                "donoremail",
+                "bookisbn",
+                "bookname",
+                "bookauthor",
+                "bookpublisher",
+                "status",
+                "statustext",
+                "applytime",
+                "contacttime",
+                "receivetime",
+                "donorremark",
+                "staffremark"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "MapObject",
+          "displayName": "",
+          "id": "#/definitions/271678995",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "integer"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "x-apifox-orders": [
+                "code",
+                "message"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "DonationSubmitRequest",
+          "displayName": "",
+          "id": "#/definitions/271678996",
+          "description": "edu.cupk.simple_library_system.dto.DonationSubmitRequest",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "donorname": {
+                  "type": "string",
+                  "description": ""
+                },
+                "donorphone": {
+                  "type": "string",
+                  "description": ""
+                },
+                "donoremail": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookisbn": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookname": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookauthor": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookpublisher": {
+                  "type": "string",
+                  "description": ""
+                },
+                "donorremark": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "donorname",
+                "donorphone",
+                "donoremail",
+                "bookisbn",
+                "bookname",
+                "bookauthor",
+                "bookpublisher",
+                "donorremark"
+              ],
+              "required": [
+                "donorname",
+                "donorphone",
+                "bookisbn"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "DonationDetailView",
+          "displayName": "",
+          "id": "#/definitions/271678997",
+          "description": "edu.cupk.simple_library_system.dto.DonationDetailView",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "donationid": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "donorname": {
+                  "type": "string",
+                  "description": ""
+                },
+                "donorphone": {
+                  "type": "string",
+                  "description": ""
+                },
+                "donoremail": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookisbn": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookname": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookauthor": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookpublisher": {
+                  "type": "string",
+                  "description": ""
+                },
+                "status": {
+                  "type": "integer",
+                  "description": "",
+                  "minimum": -127,
+                  "maximum": 128
+                },
+                "statustext": {
+                  "type": "string",
+                  "description": ""
+                },
+                "applytime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "contacttime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "receivetime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "donorremark": {
+                  "type": "string",
+                  "description": ""
+                },
+                "staffremark": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "donationid",
+                "donorname",
+                "donorphone",
+                "donoremail",
+                "bookisbn",
+                "bookname",
+                "bookauthor",
+                "bookpublisher",
+                "status",
+                "statustext",
+                "applytime",
+                "contacttime",
+                "receivetime",
+                "donorremark",
+                "staffremark"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "PageResponseDonationDetailView",
+          "displayName": "",
+          "id": "#/definitions/271678998",
+          "description": "",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "message": {
+                  "type": "string",
+                  "description": ""
+                },
+                "count": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/271678997",
+                    "description": "edu.cupk.simple_library_system.dto.DonationDetailView"
+                  },
+                  "description": ""
+                },
+                "singleData": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "code",
+                "message",
+                "count",
+                "data",
+                "singleData"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "UpdateDonationStatusRequest",
+          "displayName": "",
+          "id": "#/definitions/271678999",
+          "description": "edu.cupk.simple_library_system.dto.UpdateDonationStatusRequest",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "description": "",
+                  "minimum": -127,
+                  "maximum": 128
+                }
+              },
+              "x-apifox-orders": [
+                "status"
+              ],
+              "required": [
+                "status"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        },
+        {
+          "name": "UpdateDonationRemarkRequest",
+          "displayName": "",
+          "id": "#/definitions/271679000",
+          "description": "edu.cupk.simple_library_system.dto.UpdateDonationRemarkRequest",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "staffremark": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "staffremark"
+              ]
+            }
+          },
+          "visibility": "INHERITED",
+          "moduleId": 7691663
+        }
+      ]
+    }
+  ],
+  "securitySchemeCollection": [
+    {
+      "id": 4267565,
+      "moduleId": 7691663,
+      "name": "根目录",
+      "items": [],
+      "ordering": []
+    }
+  ],
+  "oasComponentCollection": [],
+  "requestCollection": [
+    {
+      "name": "根目录",
+      "children": [],
+      "ordering": [
+        "requestFolder.8866949"
+      ],
+      "items": []
+    }
+  ],
+  "apiTestCaseCollection": [
+    {
+      "id": 0,
+      "name": "Root",
+      "children": [],
+      "items": []
+    }
+  ],
+  "testCaseReferences": [],
+  "environments": [],
+  "commonScripts": [],
+  "databaseConnections": [],
+  "globalVariables": [],
+  "commonParameters": null,
+  "customFunctions": [],
+  "projectTestCaseCategories": [
+    {
+      "id": 9904529,
+      "name": "正向",
+      "description": "有效的输入和正确的预期结果,代表典型的用法。"
+    },
+    {
+      "id": 9904530,
+      "name": "负向",
+      "description": "消极的、无效的输入,如缺少字段、错误的类型、不支持的方法等。"
+    },
+    {
+      "id": 9904531,
+      "name": "边界值",
+      "description": "极端或边缘条件,如最大字符串长度、空值、零、null等"
+    },
+    {
+      "id": 9904532,
+      "name": "安全性",
+      "description": "可能暴露API安全性风险的测试用例。"
+    },
+    {
+      "id": 9904533,
+      "name": "其他",
+      "description": "其他未归属的测试用例。"
+    }
+  ],
+  "projectTestCaseTags": [
+    {
+      "id": 45426404,
+      "name": "仅传必要字段",
+      "description": "仅发送具有有效值的必填字段,省略所有可选字段,以测试最小有效请求。"
+    },
+    {
+      "id": 45426405,
+      "name": "语义合法",
+      "description": "使用语法正确且在业务逻辑或域上下文中也有意义的值。"
+    },
+    {
+      "id": 45426406,
+      "name": "覆盖枚举组合",
+      "description": "对所有枚举型参数,应用正交设计系统地构建参数及其枚举值的测试用例组合,专用于测试枚举覆盖率"
+    },
+    {
+      "id": 45426407,
+      "name": "其他正向",
+      "description": "提供符合API规范的真实有效的输入,产生正确和预期的结果。"
+    },
+    {
+      "id": 45426408,
+      "name": "缺失必填字段",
+      "description": "在请求主体或参数中省略一个或多个必需字段。"
+    },
+    {
+      "id": 45426409,
+      "name": "无效值",
+      "description": "提供的值类型和格式正确,但在逻辑上对该字段无效。"
+    },
+    {
+      "id": 45426410,
+      "name": "类型错误",
+      "description": "使用数据类型不正确的值,例如发送字符串而不是整数。"
+    },
+    {
+      "id": 45426411,
+      "name": "格式错误",
+      "description": "以不正确的格式提供值,例如,错误的日期模式,格式错误的电子邮件地址。"
+    },
+    {
+      "id": 45426412,
+      "name": "语义非法",
+      "description": "使用语法正确且格式正确的值,这些值在逻辑上不可能或违反域规则。"
+    },
+    {
+      "id": 45426413,
+      "name": "其他负向",
+      "description": "提供无效或意外的输入,应触发错误处理或拒绝API。"
+    },
+    {
+      "id": 45426414,
+      "name": "Null",
+      "description": "必须是 JSON 字面量 `null`(不是空的,也不是 \"null\")。"
+    },
+    {
+      "id": 45426415,
+      "name": "零值",
+      "description": "必须是数字字面值0。"
+    },
+    {
+      "id": 45426416,
+      "name": "空值",
+      "description": "必须是\"\"。"
+    },
+    {
+      "id": 45426417,
+      "name": "极大值",
+      "description": "Max/min值 - 为数字或日期字段提供精确的最小值和最大值。"
+    },
+    {
+      "id": 45426418,
+      "name": "极小值",
+      "description": "Max/min值 - 为数字或日期字段提供精确的最小值和最大值。"
+    },
+    {
+      "id": 45426419,
+      "name": "超出最大边界值",
+      "description": "过长/过短字符串 - 提供超出允许的最小或最大边界的值。"
+    },
+    {
+      "id": 45426420,
+      "name": "超出最小边界值",
+      "description": "过长/过短字符串 - 提供超出允许的最小或最大边界的值。"
+    },
+    {
+      "id": 45426421,
+      "name": "字符串过长",
+      "description": "超出范围的值 - 提供大于允许的最大长度或小于要求的最小长度的字符串。"
+    },
+    {
+      "id": 45426422,
+      "name": "字符串过短",
+      "description": "超出范围的值 - 提供大于允许的最大长度或小于要求的最小长度的字符串。"
+    },
+    {
+      "id": 45426423,
+      "name": "对象级别授权缺失",
+      "description": "对象级别授权缺失 - 用户在没有适当授权的情况下访问或操作数据对象。"
+    },
+    {
+      "id": 45426424,
+      "name": "访问控制",
+      "description": "基于角色、权限或属性来限制用户能访问哪些资源、能执行哪些操作"
+    },
+    {
+      "id": 45426425,
+      "name": "认证失败",
+      "description": "认证失败 - 认证薄弱、配置错误或被绕过,导致未授权访问。"
+    },
+    {
+      "id": 45426426,
+      "name": "SQL注入",
+      "description": "在输入字段中插入恶意SQL代码,测试是否存在SQL注入漏洞。"
+    },
+    {
+      "id": 45426427,
+      "name": "XSS注入",
+      "description": "注入JavaScript或HTML标签来测试跨站点脚本漏洞。"
+    },
+    {
+      "id": 45426428,
+      "name": "模糊输入",
+      "description": "发送大型或随机生成的有效载荷,以测试输入的有效性和稳定性。"
+    },
+    {
+      "id": 45426429,
+      "name": "命令行注入",
+      "description": "将shell命令插入输入以测试命令执行漏洞。"
+    },
+    {
+      "id": 45426430,
+      "name": "JSON注入",
+      "description": "插入恶意或意外的JSON结构来测试解析和验证。"
+    },
+    {
+      "id": 45426431,
+      "name": "NoSQL注入",
+      "description": "提供NoSQL特定的恶意查询或操作符来测试注入漏洞。"
+    },
+    {
+      "id": 45426432,
+      "name": "其他",
+      "description": "其他未归属的测试用例。"
+    }
+  ],
+  "projectAssociations": [],
+  "moduleSettings": [
+    {
+      "id": "7691663",
+      "name": "默认模块",
+      "description": "",
+      "moduleVariables": [],
+      "openApiInfo": {}
+    }
+  ]
+}
